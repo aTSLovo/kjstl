@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+set(CMAKE_CXX_STANDARD 20)
+project(mtqueue LANGUAGES CXX)
+add_executable(main main.cpp)
+target_link_libraries(main PRIVATE pthread)
