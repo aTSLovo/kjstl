@@ -122,5 +122,6 @@ template<class T, class ...Args>
 Shared_ptr<T> Make_shared(Args&&... args) {
     return Shared_ptr<T>(new T(std::forward<Args>(args)...));
 }
+
 };
 #endif
