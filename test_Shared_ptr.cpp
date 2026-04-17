@@ -25,7 +25,7 @@ public:
 };
 int main() {
     Shared_ptr<Test> test1 = Make_shared<Test>(1, "abcde");     // make_shared一次性创建
-    print("make_shared一次性创建: ", (*test1).val_);
+    print("make_shared一次性创建: ", test1->val_);
     Shared_ptr<Test> test2(new Test(2, "abc"));                 // 用new创建指针后再构造
     print("用new创建指针后再构造: ", (*test2).val_);
     Shared_ptr<Test> test3 = test1;                             // 拷贝构造、同类型
