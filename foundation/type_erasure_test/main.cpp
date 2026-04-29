@@ -71,7 +71,9 @@ template<class Msg, class...Args>
 std::shared_ptr<MsgBase> makeMsg(Args&&... args) {
     return std::make_shared<MsgImpl<Msg>>(std::forward<Msg>(args)...);
 }
+// vector<MsgBase*> msg;
 
+// 工厂模式创建
 class MsgFactoryBase {
 public:
     virtual MsgBase::Ptr create() = 0;
@@ -108,7 +110,7 @@ public:
 
         // 扩展消息麻烦，使用工厂模式创建对象
         // if(type == 1) {
-        //     msg_ = makeMsg<MoveMsg>();
+        //     msg_ = makeMsg<MoveMsg>(1, 1);
         // }
         try {
             msg_ = factories.at(type)->create();
